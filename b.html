@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .pdf-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .pdf-title {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .pdf-page {
+            padding: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            position: relative;
+            min-height: 400px;
+        }
+        
+        .pdf-page:last-child {
+            border-bottom: none;
+        }
+        
+        .page-number {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .text-block {
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+        
+        .text-span {
+            display: inline;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        .italic {
+            font-style: italic;
+        }
+        
+        .pdf-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .drawing-element {
+            position: absolute;
+            border: 1px solid #ccc;
+        }
+        
+        @media print {
+            .pdf-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .pdf-page {
+                page-break-after: always;
+            }
+            
+            .pdf-page:last-child {
+                page-break-after: auto;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <h1 class="pdf-title">b</h1>
+        <div class="pdf-page" id="page-1">
+            <div class="page-number">Page 1</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 14.0px">USENIX Example Paper</span>
+</div>
+            <div class="text-block">
+<span class="text-span italic" style="font-size: 10.0px">Pekka Nikander</span>
+<span class="text-span italic" style="font-size: 10.0px">Aalto University</span>
+</div>
+            <div class="text-block">
+<span class="text-span italic" style="font-size: 10.0px">Jane-Ellen Long</span>
+<span class="text-span italic" style="font-size: 10.0px">USENIX Association</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">Abstract</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">This is an example for a USENIX paper, in the form</span>
+<span class="text-span" style="font-size: 10.0px">of an HTML/CSS template. Being heavily self-ref-</span>
+<span class="text-span" style="font-size: 10.0px">erential, this template illustrates the features in-</span>
+<span class="text-span" style="font-size: 10.0px">cluded in this template. It is expected that the</span>
+<span class="text-span" style="font-size: 10.0px">prospective authors using HTML/CSS would create</span>
+<span class="text-span" style="font-size: 10.0px">a new document based on this template, remove</span>
+<span class="text-span" style="font-size: 10.0px">the content, and start writing their paper.</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">Note that in this template, you may have a mul-</span>
+<span class="text-span" style="font-size: 10.0px">ti-paragraph abstract. However, that it is not nec-</span>
+<span class="text-span" style="font-size: 10.0px">essarily a good practice. Try to keep your abstract</span>
+<span class="text-span" style="font-size: 10.0px">in one paragraph, and remember that the optimal</span>
+<span class="text-span" style="font-size: 10.0px">length for an abstract is 200-300 words.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">1 Introduction</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">For the purposes of USENIX conference publica-</span>
+<span class="text-span" style="font-size: 10.0px">tions, the authors, not the USENIX staff, are solely</span>
+<span class="text-span" style="font-size: 10.0px">responsible for the content and formatting of their</span>
+<span class="text-span" style="font-size: 10.0px">paper. The purpose of this template is to help</span>
+<span class="text-span" style="font-size: 10.0px">those authors that want to use HTML/CSS to write</span>
+<span class="text-span" style="font-size: 10.0px">their papers. This template has been prepared by</span>
+<span class="text-span" style="font-size: 10.0px">Håkon Wium Lie, and is based on a guide to using</span>
+<span class="text-span" style="font-size: 10.0px">FrameMaker for USENIX papers, written by Pekka</span>
+<span class="text-span" style="font-size: 10.0px">Nikander with the help of Jane-Ellen Long.</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">The rest of this paper is organized as follows.</span>
+<span class="text-span" style="font-size: 10.0px">Section 2 gives a brief overview of related work,</span>
+<span class="text-span" style="font-size: 10.0px">such as other templates and style manuals. Section</span>
+<span class="text-span" style="font-size: 10.0px">3 discusses the details of this template, and Sec-</span>
+<span class="text-span" style="font-size: 10.0px">tion 4 contains our conclusions.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">2 Related Work</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">Preparing good-looking publications is not easy.</span>
+<span class="text-span" style="font-size: 10.0px">It requires understanding of style and typography.</span>
+<span class="text-span" style="font-size: 10.0px">The purpose of the templates provided by the</span>
+<span class="text-span" style="font-size: 10.0px">USENIX organization is to lift the burden of caring</span>
+<span class="text-span" style="font-size: 10.0px">about typography from the authors. However, the</span>
+<span class="text-span" style="font-size: 10.0px">authors still remain, and will always remain, re-</span>
+<span class="text-span" style="font-size: 10.0px">sponsible for the style.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">2.1 Word and LaTeX templates</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">The USENIX website includes a template for Mi-</span>
+<span class="text-span" style="font-size: 10.0px">crosoft Word, as well as LaTeX templates. Many of</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 9.0px">Figure 1:</span><span class="text-span" style="font-size: 9.0px"> This figure is showed for illustrational purpos-</span>
+<span class="text-span" style="font-size: 9.0px">es only; floppy disks are not required to use this tem-</span>
+<span class="text-span" style="font-size: 9.0px">plate.</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">the settings in the CSS style sheet of this template</span>
+<span class="text-span" style="font-size: 10.0px">have been copied from the LaTeX templates.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">2.2 Style manuals</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">Besides typography, style is the second element</span>
+<span class="text-span" style="font-size: 10.0px">of preparing easy-to-read publications. There are</span>
+<span class="text-span" style="font-size: 10.0px">tens of good style manuals available. To mention</span>
+<span class="text-span" style="font-size: 10.0px">just a couple, The Elements of Style by Strunk and</span>
+<span class="text-span" style="font-size: 10.0px">White [1] is a classic, and has remained a bestseller</span>
+<span class="text-span" style="font-size: 10.0px">since its introduction in 1930’s. From the more</span>
+<span class="text-span" style="font-size: 10.0px">contemporary ones, Writing for Computer Science</span>
+<span class="text-span" style="font-size: 10.0px">by Justin Zobel [2] seems appropriate.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">3 Implementation</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">In this section we cover the features included in</span>
+<span class="text-span" style="font-size: 10.0px">this template. Our goal has been that the authors</span>
+<span class="text-span" style="font-size: 10.0px">do not need to make modifications to the template;</span>
+<span class="text-span" style="font-size: 10.0px">instead, they should be able to concentrate on the</span>
+<span class="text-span" style="font-size: 10.0px">content and style. With this in mind, this template</span>
+</div>
+            <div class="image-container">
+                <img src="data:image/png;base64,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" 
+                     alt="PDF Image 0" 
+                     class="pdf-image"
+                     width="294" 
+                     height="311">
+            </div>
+        </div>
+        <div class="pdf-page" id="page-2">
+            <div class="page-number">Page 2</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F1</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F2</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F3</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F4</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F5</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F6</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F7</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F8</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F9</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F10</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F11</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">F12</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Esc</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Power</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Sleep</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Wake</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">Up</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Print</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">Scrn</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">SysRq</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Scroll</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">Lock</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Pause</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">Break</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Insert</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Home</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Page</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">Up</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Delete</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">End</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Page</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">Down</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">½</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">1</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">2</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">3</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">4</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">5</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">6</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">7</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">8</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">9</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">0</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">+</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">&#x27;</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">Q</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">W</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">E</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">R</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">T</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">Y</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">U</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">I</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">O</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">P</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">Å</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">^</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">A</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">S</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">D</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">F</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">G</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">H</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">J</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">K</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">L</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">Æ</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">Ø</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">*</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">&gt;</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">Z</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">X</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">C</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">V</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">B</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">N</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">M</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">;</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">:</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">_</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.062950372695923px">Num Lock</span>
+<span class="text-span" style="font-size: 3.062950372695923px">Caps Lock</span>
+<span class="text-span" style="font-size: 3.062950372695923px">Scroll Lock</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Num</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">Lock</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">/</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 6.806556701660156px">*</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 6.806556701660156px">_</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 6.806556701660156px">+</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Enter</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.403278350830078px">Ctrl</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.403278350830078px">Alt</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.403278350830078px">Caps Lock</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.403278350830078px">Alt Gr</span>
+<span class="text-span" style="font-size: 3.403278350830078px">Ctrl</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">Web</span>
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">E-Mail</span>
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">+Volume</span>
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">-Volume</span>
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">Mute</span>
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">Previous</span>
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">Next</span>
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">Menu</span>
+<span class="text-span" style="font-size: 2.7226226329803467px; color: #246e72">Tuner</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">&lt; \</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">§</span>
+<span class="text-span" style="font-size: 4.424261569976807px">!</span>
+<span class="text-span" style="font-size: 4.424261569976807px">&quot;</span>
+<span class="text-span" style="font-size: 4.424261569976807px">#</span>
+<span class="text-span" style="font-size: 4.424261569976807px">¤</span>
+<span class="text-span" style="font-size: 4.424261569976807px">%</span>
+<span class="text-span" style="font-size: 4.424261569976807px">&amp;</span>
+<span class="text-span" style="font-size: 4.424261569976807px">/</span>
+<span class="text-span" style="font-size: 4.424261569976807px">(</span>
+<span class="text-span" style="font-size: 4.424261569976807px">)</span>
+<span class="text-span" style="font-size: 4.424261569976807px">=</span>
+<span class="text-span" style="font-size: 4.424261569976807px">?</span>
+<span class="text-span" style="font-size: 4.424261569976807px">`</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">|</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">€</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.424261569976807px">@</span>
+<span class="text-span" style="font-size: 4.424261569976807px">£</span>
+<span class="text-span" style="font-size: 4.424261569976807px">$</span>
+<span class="text-span" style="font-size: 4.424261569976807px">{</span>
+<span class="text-span" style="font-size: 4.424261569976807px">[</span>
+<span class="text-span" style="font-size: 4.424261569976807px">]</span>
+<span class="text-span" style="font-size: 4.424261569976807px">}</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">&quot; ~</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">&#x27;</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">-</span>
+<span class="text-span" style="font-size: 4.764589309692383px">.</span>
+<span class="text-span" style="font-size: 4.764589309692383px">,</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">7</span>
+<span class="text-span" style="font-size: 4.764589309692383px">8</span>
+<span class="text-span" style="font-size: 4.764589309692383px">9</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">4</span>
+<span class="text-span" style="font-size: 4.764589309692383px">5</span>
+<span class="text-span" style="font-size: 4.764589309692383px">6</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">1</span>
+<span class="text-span" style="font-size: 4.764589309692383px">2</span>
+<span class="text-span" style="font-size: 4.764589309692383px">3</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 4.764589309692383px">0</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Home</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">PgUp</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">End</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">PgDn</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 3.4036524295806885px">Ins</span>
+<span class="text-span" style="font-size: 3.4036524295806885px">Del</span>
+<span class="text-span" style="font-size: 4.764589309692383px">,</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 9.0px">Figure 2:</span><span class="text-span" style="font-size: 9.0px"> This figure floats to the top of the page, spanning both columns.</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">includes a number of features. On the other hand,</span>
+<span class="text-span" style="font-size: 10.0px">we have also tried to keep this document simple</span>
+<span class="text-span" style="font-size: 10.0px">and easy to maintain.</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">This template is written in HTML, with CSS to</span>
+<span class="text-span" style="font-size: 10.0px">provide styling, and a small JavaScript to help for-</span>
+<span class="text-span" style="font-size: 10.0px">mat references.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">3.1 HTML5</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">This template uses HTML5 elements to aid in rep-</span>
+<span class="text-span" style="font-size: 10.0px">resenting the document structure. The</span><span class="text-span" style="font-size: 10.0px"> section</span>
+<span class="text-span" style="font-size: 10.0px">element is used to split the text into sections, and</span>
+<span class="text-span" style="font-size: 10.0px">the</span><span class="text-span" style="font-size: 10.0px"> header</span><span class="text-span" style="font-size: 10.0px"> element holds the headlines. The</span>
+<span class="text-span" style="font-size: 10.0px">figure</span><span class="text-span" style="font-size: 10.0px"> element is used to include figures and</span>
+<span class="text-span" style="font-size: 10.0px">their corrensponding captions live inside the</span><span class="text-span" style="font-size: 10.0px"> fig-</span>
+<span class="text-span" style="font-size: 10.0px">caption</span><span class="text-span" style="font-size: 10.0px"> element. The</span><span class="text-span" style="font-size: 10.0px"> cite</span><span class="text-span" style="font-size: 10.0px"> element holds all ref-</span>
+<span class="text-span" style="font-size: 10.0px">erences.</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">A small microformat, based on a convention of</span>
+<span class="text-span" style="font-size: 10.0px">class names, is used to encode the name and affili-</span>
+<span class="text-span" style="font-size: 10.0px">ation of the authors.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">3.2 CSS</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">A CSS style sheet describes how to format the</span>
+<span class="text-span" style="font-size: 10.0px">HTML document into a PDF file. CSS is a declar-</span>
+<span class="text-span" style="font-size: 10.0px">ative language which attaches property values to</span>
+<span class="text-span" style="font-size: 10.0px">HTML elements and documents. Many aspects of</span>
+<span class="text-span" style="font-size: 10.0px">CSS is used to achieve the presentation of USENIX</span>
+<span class="text-span" style="font-size: 10.0px">papers, including:</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">•</span>
+<span class="text-span" style="font-size: 10.0px">multi-column layout</span>
+<span class="text-span" style="font-size: 10.0px">•</span>
+<span class="text-span" style="font-size: 10.0px">footnotes</span>
+<span class="text-span" style="font-size: 10.0px">•</span>
+<span class="text-span" style="font-size: 10.0px">page and column floats</span>
+<span class="text-span" style="font-size: 10.0px">•</span>
+<span class="text-span" style="font-size: 10.0px">multi-level counters</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">Some commonly used features are absent from</span>
+<span class="text-span" style="font-size: 10.0px">the above list: page numbers and running headers</span>
+<span class="text-span" style="font-size: 10.0px">should not be specifed by USENIX authors, these</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">are added by those who compile the Proceedings.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">3.3 JavaScript</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">This template uses JavaScript to process refer-</span>
+<span class="text-span" style="font-size: 10.0px">ences. References are added at the point where</span>
+<span class="text-span" style="font-size: 10.0px">they appear, and a script is later used to move the</span>
+<span class="text-span" style="font-size: 10.0px">references to the end of the paper, leaving behind</span>
+<span class="text-span" style="font-size: 10.0px">a numeric marker.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">3.4 PDF</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">(This section has been added by Håkon Wium Lie)</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">In order to convert the document to PDF, a for-</span>
+<span class="text-span" style="font-size: 10.0px">matter is needed. Common browsers support</span>
+<span class="text-span" style="font-size: 10.0px">HTML and CSS, but they do not support all the CSS</span>
+<span class="text-span" style="font-size: 10.0px">functionality for page-based formatting. For ex-</span>
+<span class="text-span" style="font-size: 10.0px">ample, browsers do not support footnotes or page</span>
+<span class="text-span" style="font-size: 10.0px">floats. This paper has been formatted with</span>
+<span class="text-span" style="font-size: 10.0px">Prince,</span><span class="text-span" style="font-size: 7.46999979019165px">[a]</span><span class="text-span" style="font-size: 10.0px"> </span><span class="text-span" style="font-size: 10.0px">a purpose-built program for converting</span>
+<span class="text-span" style="font-size: 10.0px">HTML and XML documents into PDF by way of</span>
+<span class="text-span" style="font-size: 10.0px">CSS. Prince is a commercial product, but can be</span>
+<span class="text-span" style="font-size: 10.0px">downloaded and used for free for non-commercial</span>
+<span class="text-span" style="font-size: 10.0px">purposes.</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">In order for Prince to process the script includ-</span>
+<span class="text-span" style="font-size: 10.0px">ed in this template, a command line option must</span>
+<span class="text-span" style="font-size: 10.0px">be specified:</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">$ prince --javascript example.html</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">4 Tables</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">The table below lists recipients of the USENIX Life-</span>
+<span class="text-span" style="font-size: 10.0px">time Achievement Award in the 1900s. Notice how</span>
+<span class="text-span" style="font-size: 10.0px">notes inside the table are moved to the end of the</span>
+<span class="text-span" style="font-size: 10.0px">table.</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.0px">[a] www.princexml.com</span>
+</div>
+        </div>
+        <div class="pdf-page" id="page-3">
+            <div class="page-number">Page 3</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">Year</span>
+<span class="text-span" style="font-size: 10.0px">Recipient</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">1999</span>
+<span class="text-span" style="font-size: 10.0px; color: #0000ff">X Window System</span><span class="text-span" style="font-size: 10.0px">*</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">1998</span>
+<span class="text-span" style="font-size: 10.0px; color: #0000ff">Tim Berners-Lee</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">1997</span>
+<span class="text-span" style="font-size: 10.0px; color: #0000ff">Brian W. Kernighan</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">1996</span>
+<span class="text-span" style="font-size: 10.0px; color: #0000ff">The Software Tools Project</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">1995</span>
+<span class="text-span" style="font-size: 10.0px">The Creation of</span><span class="text-span" style="font-size: 10.0px; color: #0000ff"> USENET</span><span class="text-span" style="font-size: 10.0px"> **</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">1994</span>
+<span class="text-span" style="font-size: 10.0px">Networking Technologies</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">1993</span>
+<span class="text-span" style="font-size: 10.0px; color: #0000ff">Berkeley UNIX</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">* Given to the Community at Large</span>
+<span class="text-span" style="font-size: 10.0px">** Given to</span><span class="text-span" style="font-size: 10.0px; color: #0000ff"> Jim Ellis</span><span class="text-span" style="font-size: 10.0px"> and</span><span class="text-span" style="font-size: 10.0px; color: #0000ff"> Tom Truscott</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">5 Conclusions</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">Each good paper concludes the most significant</span>
+<span class="text-span" style="font-size: 10.0px">findings in the end.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">Acknowledgments</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">A polite author always includes acknowledgments.</span>
+<span class="text-span" style="font-size: 10.0px">Thank everyone, especially those who funded the</span>
+<span class="text-span" style="font-size: 10.0px">work.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">Availability</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">Please include a section at the end of your paper</span>
+<span class="text-span" style="font-size: 10.0px">providing availability information. If the system</span>
+<span class="text-span" style="font-size: 10.0px">you describe is available to others, and if more in-</span>
+<span class="text-span" style="font-size: 10.0px">formation (reports, etc.) may be obtained, indicate</span>
+<span class="text-span" style="font-size: 10.0px">terms and contact information.</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold">References</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">[1] S</span><span class="text-span" style="font-size: 8.0px">TRUNK</span><span class="text-span" style="font-size: 10.0px">, W. J</span><span class="text-span" style="font-size: 8.0px">R</span><span class="text-span" style="font-size: 10.0px">., </span><span class="text-span" style="font-size: 8.0px">AND</span><span class="text-span" style="font-size: 10.0px"> W</span><span class="text-span" style="font-size: 8.0px">HITE</span><span class="text-span" style="font-size: 10.0px">, E.B. The Elements</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 10.0px">of Style, 4th Ed, Allyn and Bacon, August, 1999,</span>
+<span class="text-span" style="font-size: 10.0px">ISBN 020530902X</span>
+<span class="text-span" style="font-size: 10.0px">[2]</span>
+<span class="text-span" style="font-size: 10.0px">Z</span><span class="text-span" style="font-size: 8.0px">OBEL</span><span class="text-span" style="font-size: 10.0px">, J.</span>
+<span class="text-span" style="font-size: 10.0px">Writing for Computer Science,</span>
+<span class="text-span" style="font-size: 10.0px">Springer-Verlag, </span>
+<span class="text-span" style="font-size: 10.0px">December </span>
+<span class="text-span" style="font-size: 10.0px">1997, </span>
+<span class="text-span" style="font-size: 10.0px">ISBN</span>
+<span class="text-span" style="font-size: 10.0px">9813083220</span>
+</div>
+        </div>
+    </div>
+</body>
+</html>

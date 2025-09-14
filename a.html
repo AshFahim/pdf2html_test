@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .pdf-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .pdf-title {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .pdf-page {
+            padding: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            position: relative;
+            min-height: 400px;
+        }
+        
+        .pdf-page:last-child {
+            border-bottom: none;
+        }
+        
+        .page-number {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .text-block {
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+        
+        .text-span {
+            display: inline;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        .italic {
+            font-style: italic;
+        }
+        
+        .pdf-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .drawing-element {
+            position: absolute;
+            border: 1px solid #ccc;
+        }
+        
+        @media print {
+            .pdf-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .pdf-page {
+                page-break-after: always;
+            }
+            
+            .pdf-page:last-child {
+                page-break-after: auto;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <h1 class="pdf-title">a</h1>
+        <div class="pdf-page" id="page-1">
+            <div class="page-number">Page 1</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px">PDF Bookmark Sample </span>
+<span class="text-span" style="font-size: 8.999199867248535px">Page 1 of 4 </span>
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 17.99850082397461px; color: #ff0000">PDF B</span><span class="text-span bold" style="font-size: 14.518799781799316px; color: #ff0000">OOKMARK </span><span class="text-span bold" style="font-size: 17.99850082397461px; color: #ff0000">S</span><span class="text-span bold" style="font-size: 14.518799781799316px; color: #ff0000">AMPLE</span><span class="text-span bold" style="font-size: 17.99850082397461px; color: #ff0000"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 11.03909969329834px">Sample Date: </span>
+<span class="text-span" style="font-size: 11.03909969329834px">May 2001 </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 11.03909969329834px">Prepared by: </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Accelio Present Applied Technology </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 11.03909969329834px">Created and Tested Using: </span>
+<span class="text-span" style="font-size: 9.959199905395508px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Accelio Present Central 5.4 </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.959199905395508px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Accelio Present Output Designer 5.4 </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 11.03909969329834px">Features Demonstrated: </span>
+<span class="text-span" style="font-size: 9.959199905395508px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Primary bookmarks in a PDF file. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.959199905395508px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Secondary bookmarks in a PDF file. </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 14.038800239562988px; color: #808080">Overview </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">This sample consists of a simple form containing four distinct fields. The data file contains eight </span>
+<span class="text-span" style="font-size: 11.03909969329834px">separate records. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">By default, the data file will produce a PDF file containing eight separate pages. The selective </span>
+<span class="text-span" style="font-size: 11.03909969329834px">use of the bookmark file will produce the same PDF with a separate pane containing </span>
+<span class="text-span" style="font-size: 11.03909969329834px">bookmarks. This screenshot of the sample output shows a PDF file with bookmarks. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px"> </span>
+<span class="text-span" style="font-size: 11.03909969329834px">The left pane displays the available bookmarks for this PDF. You may need to enable the </span>
+<span class="text-span" style="font-size: 11.03909969329834px">display of bookmarks in Adobe</span><span class="text-span" style="font-size: 8.999199867248535px"></span><span class="text-span" style="font-size: 11.03909969329834px"> Acrobat</span><span class="text-span" style="font-size: 8.999199867248535px"></span><span class="text-span" style="font-size: 11.03909969329834px"> Reader by clicking </span><span class="text-span bold" style="font-size: 11.03909969329834px">Window &gt; Show Bookmarks</span><span class="text-span" style="font-size: 11.03909969329834px">. </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Selecting a date from the left pane displays the corresponding page within the document. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">Note that the index has been sorted according to the specification in the bookmark file, and that </span>
+<span class="text-span" style="font-size: 11.03909969329834px">pages within the file are created according to the original order in the data file. </span>
+</div>
+            <div class="image-container">
+                <img src="data:image/png;base64,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" 
+                     alt="PDF Image 0" 
+                     class="pdf-image"
+                     width="197" 
+                     height="134">
+            </div>
+            <div class="image-container">
+                <img src="data:image/png;base64,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" 
+                     alt="PDF Image 1" 
+                     class="pdf-image"
+                     width="708" 
+                     height="348">
+            </div>
+        </div>
+        <div class="pdf-page" id="page-2">
+            <div class="page-number">Page 2</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px">PDF Bookmark Sample </span>
+<span class="text-span" style="font-size: 8.999199867248535px">Page 2 of 4 </span>
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold italic" style="font-size: 11.99899959564209px">Sample Data File </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.959199905395508px">^reformat trunc</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^symbolset WINLATIN1</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field trans_date</span>
+<span class="text-span" style="font-size: 9.959199905395508px">2000-01-1</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field description</span>
+<span class="text-span" style="font-size: 9.959199905395508px">Description for item #1</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field trans_type</span>
+<span class="text-span" style="font-size: 9.959199905395508px">TYPE1</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field trans_amount</span>
+<span class="text-span" style="font-size: 9.959199905395508px">11.00</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^page 1</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field trans_date</span>
+<span class="text-span" style="font-size: 9.959199905395508px">2000-01-2</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field description</span>
+<span class="text-span" style="font-size: 9.959199905395508px">Description for item #2</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field trans_type</span>
+<span class="text-span" style="font-size: 9.959199905395508px">TYPE2</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field trans_amount</span>
+<span class="text-span" style="font-size: 9.959199905395508px">11.00</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^page 1</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field trans_date</span>
+<span class="text-span" style="font-size: 9.959199905395508px">2000-01-3</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field description</span>
+<span class="text-span" style="font-size: 9.959199905395508px">Description for item #3</span>
+<span class="text-span" style="font-size: 9.959199905395508px">^field trans_type</span>
+<span class="text-span" style="font-size: 9.959199905395508px">TYPE3</span>
+</div>
+            <div class="text-block">
+<span class="text-span bold italic" style="font-size: 11.99899959564209px"> </span>
+<span class="text-span bold italic" style="font-size: 11.99899959564209px">Sample Bookmark File </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.959199905395508px">[invoices]</span>
+<span class="text-span" style="font-size: 9.959199905395508px">Invoices by Date=0</span>
+<span class="text-span" style="font-size: 9.959199905395508px">trans_date=1,A</span>
+<span class="text-span" style="font-size: 9.959199905395508px">[type]</span>
+<span class="text-span" style="font-size: 9.959199905395508px">Invoices by Item Type=0</span>
+<span class="text-span" style="font-size: 9.959199905395508px">trans_type=1,A</span>
+<span class="text-span" style="font-size: 9.959199905395508px">[amount]</span>
+<span class="text-span" style="font-size: 9.959199905395508px">Invoices by Transaction Amount=0</span>
+<span class="text-span" style="font-size: 9.959199905395508px">trans_amount=1,D</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">The example bookmark file includes three distinct sections: </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.959199905395508px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Invoices sorted, ascending, by date. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.959199905395508px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Invoices sorted, ascending, by item type. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.959199905395508px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Invoices sorted, descending, by transaction amount. </span>
+</div>
+            <div class="image-container">
+                <img src="data:image/png;base64,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" 
+                     alt="PDF Image 0" 
+                     class="pdf-image"
+                     width="197" 
+                     height="134">
+            </div>
+        </div>
+        <div class="pdf-page" id="page-3">
+            <div class="page-number">Page 3</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px">PDF Bookmark Sample </span>
+<span class="text-span" style="font-size: 8.999199867248535px">Page 3 of 4 </span>
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 14.038800239562988px; color: #808080">Sample Files </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">This sample package contains: </span>
+<span class="text-span" style="font-size: 11.03909969329834px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 11.03909969329834px">Filename </span>
+<span class="text-span bold" style="font-size: 11.03909969329834px">Description </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">ap_bookmark.IFD </span>
+<span class="text-span" style="font-size: 11.03909969329834px">The template design. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">ap_bookmark.mdf </span>
+<span class="text-span" style="font-size: 11.03909969329834px">The template targeted for PDF output. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">ap_bookmark.dat </span>
+<span class="text-span" style="font-size: 11.03909969329834px">A sample data file in DAT format. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">ap_bookmark.bmk </span>
+<span class="text-span" style="font-size: 11.03909969329834px">A sample bookmark file. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">ap_bookmark.pdf </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Sample PDF output. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">ap_bookmark_doc.pdf </span>
+<span class="text-span" style="font-size: 11.03909969329834px">A document describing the sample. </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 14.038800239562988px; color: #808080">Deploying the Sample </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">To deploy this sample in your environment: </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">1. Open the template design </span><span class="text-span bold" style="font-size: 11.03909969329834px">ap_bookmark.IFD</span><span class="text-span" style="font-size: 11.03909969329834px"> in Output Designer and recompile the </span>
+<span class="text-span" style="font-size: 11.03909969329834px">template for the appropriate presentment target. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">2. Modify the </span><span class="text-span bold" style="font-size: 11.03909969329834px">-z</span><span class="text-span" style="font-size: 11.03909969329834px"> option in the </span><span class="text-span bold" style="font-size: 11.03909969329834px">^job</span><span class="text-span" style="font-size: 11.03909969329834px"> command in the data file </span><span class="text-span bold" style="font-size: 11.03909969329834px">ap_bookmark.dat</span><span class="text-span" style="font-size: 11.03909969329834px"> to: </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Identify the target output device. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Identify the bookmark file using the </span><span class="text-span bold" style="font-size: 11.03909969329834px">-abmk</span><span class="text-span" style="font-size: 11.03909969329834px"> command. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Identify the section for which to generate bookmarks, if desired, using the </span><span class="text-span bold" style="font-size: 11.03909969329834px">-abms</span><span class="text-span" style="font-size: 11.03909969329834px"> </span>
+<span class="text-span" style="font-size: 11.03909969329834px">command. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">For example, </span>
+<span class="text-span" style="font-size: 11.03909969329834px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 11.03909969329834px">To bookmark by …  </span>
+<span class="text-span bold" style="font-size: 11.03909969329834px">Use the command line parameter …  </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">Invoices </span>
+<span class="text-span bold" style="font-size: 9.959199905395508px">-abmk</span><span class="text-span" style="font-size: 9.959199905395508px">ap_bookmark.bmk</span><span class="text-span bold" style="font-size: 9.959199905395508px"> -abms</span><span class="text-span" style="font-size: 9.959199905395508px">invoices</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">Type </span>
+<span class="text-span bold" style="font-size: 9.959199905395508px">-abmk</span><span class="text-span" style="font-size: 9.959199905395508px">ap_bookmark.bmk</span><span class="text-span bold" style="font-size: 9.959199905395508px"> -abms</span><span class="text-span" style="font-size: 9.959199905395508px">type</span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">Amount </span>
+<span class="text-span bold" style="font-size: 9.959199905395508px">-abmk</span><span class="text-span" style="font-size: 9.959199905395508px">ap_bookmark.bmk</span><span class="text-span bold" style="font-size: 9.959199905395508px"> -abms</span><span class="text-span" style="font-size: 9.959199905395508px">amount</span>
+</div>
+            <div class="image-container">
+                <img src="data:image/png;base64,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" 
+                     alt="PDF Image 0" 
+                     class="pdf-image"
+                     width="197" 
+                     height="134">
+            </div>
+        </div>
+        <div class="pdf-page" id="page-4">
+            <div class="page-number">Page 4</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 8.999199867248535px">PDF Bookmark Sample </span>
+<span class="text-span" style="font-size: 8.999199867248535px">Page 4 of 4 </span>
+<span class="text-span" style="font-size: 8.999199867248535px"> </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">3. Place the accompanying files in directories consistent with your implementation: </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Place </span><span class="text-span bold" style="font-size: 11.03909969329834px">ap_bookmark.IFD</span><span class="text-span" style="font-size: 11.03909969329834px"> in the </span><span class="text-span bold" style="font-size: 11.03909969329834px">Designs</span><span class="text-span" style="font-size: 11.03909969329834px"> subdirectory for Output Designer. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Place </span><span class="text-span bold" style="font-size: 11.03909969329834px">ap_bookmark.mdf</span><span class="text-span" style="font-size: 11.03909969329834px"> in the forms subdirectory accessible to Central. </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 11.03909969329834px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">Place </span><span class="text-span bold" style="font-size: 11.03909969329834px">ap_bookmark.bmk</span><span class="text-span" style="font-size: 11.03909969329834px"> in an addressable directory. </span>
+</div>
+            <div class="text-block">
+<span class="text-span bold" style="font-size: 14.038800239562988px; color: #808080">Running the Sample </span>
+</div>
+            <div class="text-block">
+<span class="text-span" style="font-size: 9.959199905395508px">• </span>
+<span class="text-span" style="font-size: 11.03909969329834px">To run this sample, place </span><span class="text-span bold" style="font-size: 11.03909969329834px">ap_bookmark.dat</span><span class="text-span" style="font-size: 11.03909969329834px"> in the collector directory scanned by Central. </span>
+</div>
+            <div class="image-container">
+                <img src="data:image/png;base64,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" 
+                     alt="PDF Image 0" 
+                     class="pdf-image"
+                     width="197" 
+                     height="134">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
